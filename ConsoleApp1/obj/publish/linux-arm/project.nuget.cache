@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "NiH+sM7ASoWPQ+R/Fc7LsB+eQiLY0NmEMQ345lX1TE+nmGebzrrA209s09yz+aZ6hKsHcoyLZjrwXOfH2Ddibw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Glitch\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Glitch\\.nuget\\packages\\microsoft.netcore.app.runtime.linux-arm\\6.0.6\\microsoft.netcore.app.runtime.linux-arm.6.0.6.nupkg.sha512",
+    "C:\\Users\\Glitch\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.linux-arm\\6.0.6\\microsoft.aspnetcore.app.runtime.linux-arm.6.0.6.nupkg.sha512",
+    "C:\\Users\\Glitch\\.nuget\\packages\\microsoft.netcore.app.host.linux-arm\\6.0.6\\microsoft.netcore.app.host.linux-arm.6.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}

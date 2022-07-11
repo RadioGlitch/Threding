@@ -1,0 +1,5 @@
+C:\Users\Glitch\source\repos\ConsoleApp1\ConsoleApp1\bin\Release\net6.0\publish\win-x86n\ConsoleApp1.exe
+C:\Users\Glitch\source\repos\ConsoleApp1\ConsoleApp1\bin\Release\net6.0\publish\win-x86n\ConsoleApp1.dll
+C:\Users\Glitch\source\repos\ConsoleApp1\ConsoleApp1\bin\Release\net6.0\publish\win-x86n\ConsoleApp1.deps.json
+C:\Users\Glitch\source\repos\ConsoleApp1\ConsoleApp1\bin\Release\net6.0\publish\win-x86n\ConsoleApp1.runtimeconfig.json
+C:\Users\Glitch\source\repos\ConsoleApp1\ConsoleApp1\bin\Release\net6.0\publish\win-x86n\ConsoleApp1.pdb
