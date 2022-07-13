@@ -1,7 +1,9 @@
-﻿back:
-Console.Write("Введите количество потоков: ");
-
+﻿object loker = new();
+string FilePath = $"{Directory.GetCurrentDirectory()}\\output.txt";
 int number_of_thread;
+
+back:
+Console.Write("Введите количество потоков: ");
 
 try {number_of_thread = Convert.ToInt32(Console.ReadLine()); }
 catch { Console.WriteLine("Только целые числа"); goto back; }
@@ -10,12 +12,14 @@ Console.WriteLine();
 
 if (number_of_thread <= 0) { Console.WriteLine("Количество потоков меньше 1. Завершение работы"); Environment.Exit(0); }
 
-List<string> result = new List<string>();
-
-if (File.Exists($"{Directory.GetCurrentDirectory()}\\output.txt") != true)
+if (File.Exists($"{FilePath}") != true)
 {
-    FileStream filestream = new FileStream(@$"{Directory.GetCurrentDirectory()}\\output.txt", FileMode.Create);
+    FileStream filestream = new FileStream($"{FilePath}", FileMode.Create);
     filestream.Close();
+}
+else
+{
+    File.WriteAllText($"{FilePath}", null);
 }
 
 Thread[] Threads = new Thread[number_of_thread];
@@ -27,25 +31,21 @@ for (int i = 0; i < Threads.Length ; i++)
     Threads[i].Start();
 }
 
-for (int i = 0; i < Threads.Length; i++)
-{
-    Threads[i].Join();
-}
-
-for (int i = 0; i < result.Count; i++)
-{
-    Console.WriteLine(result[i].ToString());
-}
-File.WriteAllLines($"{Directory.GetCurrentDirectory()}\\output.txt", result);
-
-Console.WriteLine($"Готово!\n Файл создат по следующему пути: {Directory.GetCurrentDirectory()}\\output.txt");
-Console.ReadKey();
+Console.WriteLine();
+Console.WriteLine($"Готово!\nФайл создат по следующему пути: {FilePath}");
 
 void Proces()
 {
     for (int i = 1; i < Threads.Length + 1; i++)
     {
-        result.Add($"{Thread.CurrentThread.Name}: {Convert.ToInt32(Thread.CurrentThread.Name) * Threads.Length * i}");
+        Console.WriteLine($"{Thread.CurrentThread.Name}: {Convert.ToInt32(Thread.CurrentThread.Name) * Threads.Length * i}");
+        
+        lock (loker)
+        {
+            File.AppendAllText($"{FilePath}", $"{Thread.CurrentThread.Name}: {Convert.ToInt32(Thread.CurrentThread.Name) * Threads.Length * i}" + Environment.NewLine);
+        }
+
+        Thread.CurrentThread.Join();
         Thread.Sleep(1);
     }
 }
