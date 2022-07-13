@@ -44,8 +44,7 @@ void Proces()
         {
             File.AppendAllText($"{FilePath}", $"{Thread.CurrentThread.Name}: {Convert.ToInt32(Thread.CurrentThread.Name) * Threads.Length * i}" + Environment.NewLine);
         }
-
-        Thread.CurrentThread.Join();
-        Thread.Sleep(1);
+        
     }
 }
+
