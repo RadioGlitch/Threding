@@ -39,10 +39,10 @@ void Proces()
     for (int i = 1; i < Threads.Length + 1; i++)
     {
         Console.WriteLine($"{Thread.CurrentThread.Name}: {Convert.ToInt32(Thread.CurrentThread.Name) * Threads.Length * i}");
-        
+        string output = $"{Thread.CurrentThread.Name}: {Convert.ToInt32(Thread.CurrentThread.Name) * Threads.Length * i}";
         lock (loker)
         {
-            File.AppendAllText($"{FilePath}", $"{Thread.CurrentThread.Name}: {Convert.ToInt32(Thread.CurrentThread.Name) * Threads.Length * i}" + Environment.NewLine);
+            File.AppendAllText(FilePath, output + Environment.NewLine);
         }
         
     }
